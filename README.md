@@ -1,33 +1,66 @@
-# Joker Reclaimed 개발 프로젝트
+# Joker Reclaimed · 조커 복원소
 
-완성 모드 소스는 [JokerReclaimed](JokerReclaimed), 사용자 설명과 가격표는 [모드 설명서](JokerReclaimed/README.md)에 있습니다. 수치는 [balance.lua](JokerReclaimed/balance.lua)에서 수정합니다.
+Tear unwanted Jokers into permanent scraps, then restore the unlocked Joker you want. A Steamodded mod for Balatro with selectable stickers and editions, native card effects, and all 15 game languages.
 
-## 검증
+필요 없는 조커를 찢어 영구 조각을 모으고, 해금한 원하는 조커를 복원하는 Steamodded 모드입니다. **이터널 조커는 찢을 수 없습니다.**
 
-Balatro에 포함된 LuaJIT DLL을 사용합니다. 설치 위치가 다르면 `--game-dir`을 지정하세요.
+[Download 1.0.0](https://github.com/kmu9842/JokerReclaimed/releases/tag/v1.0.0) · [15 languages & illustrated guides](docs/LANGUAGES.md) · [한국어 상세 설명](JokerReclaimed/README.md)
+
+![Joker Reclaimed restoration shop](docs/images/screenshots/en-us-intro.png)
+
+## Install
+
+1. Install [Lovely](https://github.com/ethangreen-dev/lovely-injector) and [Steamodded](https://github.com/Steamodded/smods).
+2. Download `JokerReclaimed-1.0.0.zip` from Releases and extract its `JokerReclaimed` folder into your Balatro Mods directory. On Windows: `%APPDATA%\Balatro\Mods\`.
+3. Restart Balatro. The metadata file should be at `Mods/JokerReclaimed/JokerReclaimed.json`.
+
+Developed with Balatro **1.0.1o**, Steamodded **26.829.0**, and Lovely **0.10.0**. Only the mod is bundled; install its dependencies separately.
+
+## Play
+
+Select an owned Joker and click **Tear Joker**. Confirm to receive scraps that persist across runs and profiles; tearing gives no sale money or sell effects. In the shop, choose **Restore Joker** or press **F7**, select an unlocked Joker, then choose stickers and an edition before buying.
+
+| Rarity | Scraps from tearing | Scraps to restore | Base dollars |
+|---|---:|---:|---|
+| Common | 1 | 10 | Normal shop price |
+| Uncommon | 3 | 30 | Normal shop price |
+| Rare | 7 | 60 | Normal shop price |
+| Legendary | 20 | 100 | $10 |
+
+Rental and Perishable replace the dollar price with **$1**; Eternal replaces it with **$2**. Rental + Eternal costs $2; Rental + Perishable costs $1. Eternal and Perishable are mutually exclusive. Sticker compatibility follows each Joker's settings. **The base scrap cost remains unchanged.**
+
+Foil adds **5** scraps, Holographic **10**, Polychrome **20**, and Negative **50**. Choose one edition. Example: Common + Rental + Polychrome = **30 scraps + $1**.
+
+The catalogue respects unlocks, hidden cards and challenge bans. Modded Jokers are included; custom rarities default to Rare prices unless configured. No cheat option or currency-grant shortcut is included.
+
+## Guides
+
+[한국어](docs/languages/ko.md) · [English](docs/languages/en-us.md) · [日本語](docs/languages/ja.md) · [简体中文](docs/languages/zh_CN.md) · [繁體中文](docs/languages/zh_TW.md) · [Deutsch](docs/languages/de.md) · [Français](docs/languages/fr.md) · [Español (España)](docs/languages/es_ES.md) · [Español (Latinoamérica)](docs/languages/es_419.md) · [Português (Brasil)](docs/languages/pt_BR.md) · [Italiano](docs/languages/it.md) · [Bahasa Indonesia](docs/languages/id.md) · [Русский](docs/languages/ru.md) · [Nederlands](docs/languages/nl.md) · [Polski](docs/languages/pl.md)
+
+Every guide uses actual game captures in its language. Download `JokerReclaimed-1.0.0-guides.zip` for all 75 original screenshots, 15 guide images and localized text. [Capture provenance](docs/CAPTURES.md).
+
+## Configuration and saves
+
+Edit [balance.lua](JokerReclaimed/balance.lua) for rewards, prices, custom rarities and the shop shortcut. The in-game mod configuration controls the tear confirmation dialog.
+
+Scraps are stored outside the mod in `Balatro/joker_reclaimed/wallet-a.json` and `wallet-b.json` under the game's save directory. Back up **both files together**. Updating or removing the mod does not remove the wallet. Current-run money is separate from persistent scraps.
+
+## Development
 
 ```powershell
 python tools/run_lua.py --syntax
 python tools/run_lua.py tests/unit.lua tests/localization.lua
-```
-
-실제 게임을 실행하거나 자동 조작하는 테스트는 사용자가 명시적으로 요청할 때만 실행합니다. 코드 수정 시에는 위 구문·단위 검사만 사용합니다.
-
-실행 검증은 `.local/qa-mods`에 Steamodded, 설치된 DVPreview·QuickRestart와 테스트 모드를 복사해 실행합니다. 저장 identity를 `Balatro-JRC-QA`로 고정하고 Steam 연동을 끕니다. 매 실행 전 이 테스트 저장 폴더만 초기화하며 실제 Balatro 프로필과 조각 지갑은 수정하지 않습니다. 검증이 끝나면 게임이 자동으로 종료됩니다.
-
-결과와 화면은 `%APPDATA%\Balatro-JRC-QA\qa-report.json`, `qa-*.png`로 저장됩니다. 테스트 모드는 배포 폴더에 포함되지 않습니다.
-
-## 빌드와 설치
-
-```powershell
+python tools/build_docs.py --text-only
 python tools/build.py
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/install.ps1
 ```
 
-빌드는 `dist/JokerReclaimed-1.0.2.zip`과 SHA-256 체크섬을 만듭니다. 설치 스크립트는 기존 설치가 있으면 `.local/install-backups`에 백업하고 사용자 설정을 보존하며 설치 파일의 해시를 검증합니다.
+The Lua checks use the installed game's LuaJIT DLL without launching the game. Set `--game-dir` if needed. Installation backs up an existing mod under `.local/install-backups`, preserves user settings and verifies file hashes.
 
-## 이미지와 번역
+Actual game automation is run **only when explicitly requested**. For documentation photography, `tools/runtime_test.ps1 -Scenario capture` uses a separate `Balatro-JRC-QA` save identity with Steam integration disabled. It never uses the player's saves, and capture fixtures are excluded from the mod ZIP. See [capture instructions](docs/CAPTURES.md).
 
-[art/provenance.json](art/provenance.json)에 비공개 Forge GPT Image 2.5 Sunburst 생성 모델과 프롬프트를 기록했습니다. 원본 이미지는 `art/source`, 게임용 아틀라스는 모드의 `assets/1x`, `assets/2x`에 있습니다. `tools/prepare_assets.py`로 원본을 원래 Balatro 팔레트의 32/64 픽셀 아틀라스로 변환합니다.
+`tools/generate_locales.py` maintains 13 translations; Korean and English are maintained directly. `tools/prepare_assets.py` converts the private Forge **GPT Image 2.5 Sunburst** source into native-palette 32/64 px atlases. [Artwork provenance](art/provenance.json).
 
-`tools/generate_locales.py`는 한국어·영어를 제외한 13개 번역 파일을 만듭니다. 영어권 픽셀 폰트가 지원하지 않는 가운데점·곡선 아포스트로피는 지원 문자로 변환합니다. 실행 검증은 15개 언어의 목록과 옵션 화면, 카드 중심, 문자별 폰트 지원 여부를 검사합니다.
+## License
+
+Mod code: [MIT](JokerReclaimed/LICENSE). Balatro and the game content visible in screenshots belong to their respective owners; screenshots document the mod in use. No game executable, font, or original game asset atlas is distributed.

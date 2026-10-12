@@ -19,7 +19,7 @@ Get-ChildItem -LiteralPath $source -Force | ForEach-Object {
     Copy-Item -LiteralPath $_.FullName -Destination $destination -Recurse -Force
 }
 if ($null -ne $preservedConfig) {
-    # Retain user preferences while dropping the option removed in 1.0.2.
+    # Retain user preferences while dropping the retired development-only option.
     $retiredOption = '(?:\[\s*["'']enable_cheats["'']\s*\]|\benable_cheats)\s*=\s*(?:true|false)\s*[,;]?'
     $preservedConfig = [regex]::Replace($preservedConfig, $retiredOption, '')
     [IO.File]::WriteAllText((Join-Path $destination 'config.lua'), $preservedConfig, [Text.UTF8Encoding]::new($false))

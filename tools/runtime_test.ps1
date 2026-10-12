@@ -1,5 +1,5 @@
 param([string]$GameDirectory = 'E:\SteamLibrary\steamapps\common\Balatro',
-    [ValidateSet('full', 'reopen')][string]$Scenario = 'full')
+    [ValidateSet('full', 'reopen', 'capture')][string]$Scenario = 'full')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $qaMods = Join-Path $projectRoot '.local\qa-mods'

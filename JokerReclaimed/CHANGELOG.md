@@ -1,23 +1,15 @@
 # Changes
 
-## 1.0.2
+## 1.0.0 — first public release
 
-- Removed the testing cheat option, currency grant function, and F8 keybind.
-- Removed cheat translations and pending cheat cash replay; retained the F7 shop shortcut.
-- Removed the retired option from preserved installation settings.
+- Tear owned Jokers for persistent scraps without sale income or sale effects. Eternal and protected Jokers cannot be torn.
+- Restore unlocked Jokers in the shop, with rarity filters, centered native card previews and an F7 shortcut.
+- Choose sticker dollar-price replacements and edition scrap surcharges; all prices are editable in `balance.lua`.
+- Preserve scraps across runs and profiles with verified wallet snapshots and interrupted-transaction recovery.
+- Blend the actual card art's jagged tear animation with native sounds, particles and dissolve effects.
+- Support all 15 Balatro languages, including localized instructions and guides made from actual game screenshots.
+- Keep shop and tear buttons reusable after closing or cancelling their menus.
+- Ship private Forge GPT Image 2.5 Sunburst artwork in 1x/2x atlases.
+- Exclude development cheats, currency grants and test runners from the distributed mod.
 
-## 1.0.1
-
-- Fixed the shop restoration button becoming permanently disabled after its first click.
-- Kept the Tear button reusable after cancelling its confirmation dialog.
-- Preserved the overlay cursor context when returning from options to the catalogue.
-
-## 1.0.0
-
-- Added a separate Tear action with confirmation, a jagged split of the actual card art, native sounds and paper particles.
-- Added a persistent, shared scrap wallet with verified snapshots and run transaction recovery.
-- Added an unlocked-Joker restoration catalogue with rarity filters and native card previews.
-- Added sticker dollar-price replacements and edition scrap surcharges.
-- Added all 15 game locales, configurable economy, F7 shop shortcut and opt-in testing cheat.
-- Centered catalogue and detail previews precisely, with native hover descriptions and responsive text sizing.
-- Added private Forge GPT Image 2.5 Sunburst artwork and 1x/2x atlases.
+The local development snapshots numbered 1.0.1 and 1.0.2 were never public releases. This version consolidates those changes as the requested first public release, 1.0.0.

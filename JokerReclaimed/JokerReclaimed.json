@@ -6,7 +6,7 @@
   "description": "Tear Jokers into persistent scraps and restore any unlocked Joker with selected stickers and editions.",
   "prefix": "jrc",
   "main_file": "main.lua",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "priority": 100,
   "dependencies": ["Steamodded (>=1.0.0~BETA-1221a)"],
   "badge_colour": "397F73",

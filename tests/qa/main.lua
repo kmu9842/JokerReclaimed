@@ -1,5 +1,8 @@
 -- Runs only under .local/qa-mods and an isolated LOVE save identity.
 assert(love.filesystem.getIdentity() == 'Balatro-JRC-QA', 'QA must never run in the real profile')
+if os.getenv('JRC_QA_SCENARIO') == 'capture' then
+    return assert(SMODS.load_file('capture.lua'))()
+end
 if os.getenv('JRC_QA_SCENARIO') == 'reopen' then
     return assert(SMODS.load_file('reopen.lua'))()
 end
