@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Destrói o curinga sem dinheiro ou efeitos de venda.",
     jrc_cancel = "Cancelar",
     jrc_confirm_setting = "Confirmar antes de rasgar",
-    jrc_cheat_setting = "Ativar truques de teste",
-    jrc_cheat_hint = "Ctrl esquerdo + Shift esquerdo + F8: 1000 fragmentos, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# fragmentos / $#2# nesta partida",

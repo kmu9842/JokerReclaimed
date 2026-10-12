@@ -72,5 +72,5 @@ eq(reloaded:load(), true, 'recover other slot')
 eq(reloaded.data.scraps, 20)
 files['test/wallet-b.json'] = '{broken'
 eq(reloaded:load(), false, 'fail closed on corrupt wallet')
-eq(reloaded:transaction({id = 'x', kind = 'cheat', scraps = 100}, 100), false)
+eq(reloaded:transaction({id = 'tear:1:3', kind = 'tear', scraps = 20}, 20), false)
 print('PASS: ' .. assertions .. ' economy and persistence assertions')

@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Destruye el comodín sin dinero ni efectos de venta.",
     jrc_cancel = "Cancelar",
     jrc_confirm_setting = "Confirmar antes de romper",
-    jrc_cheat_setting = "Activar trucos de prueba",
-    jrc_cheat_hint = "Ctrl izq. + Mayús izq. + F8: 1000 fragmentos, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# fragmentos / $#2# en esta partida",

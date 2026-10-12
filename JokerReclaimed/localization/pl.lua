@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Niszczy Jokera bez pieniędzy i efektów sprzedaży.",
     jrc_cancel = "Anuluj",
     jrc_confirm_setting = "Potwierdzaj przed podarciem",
-    jrc_cheat_setting = "Włącz kody testowe",
-    jrc_cheat_hint = "Lewy Ctrl + lewy Shift + F8: 1000 skrawków, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# skrawków / $#2# w tej rozgrywce",

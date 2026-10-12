@@ -1,5 +1,11 @@
 # Changes
 
+## 1.0.2
+
+- Removed the testing cheat option, currency grant function, and F8 keybind.
+- Removed cheat translations and pending cheat cash replay; retained the F7 shop shortcut.
+- Removed the retired option from preserved installation settings.
+
 ## 1.0.1
 
 - Fixed the shop restoration button becoming permanently disabled after its first click.

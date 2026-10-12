@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Distrugge il Joker senza denaro né effetti di vendita.",
     jrc_cancel = "Annulla",
     jrc_confirm_setting = "Conferma prima di strappare",
-    jrc_cheat_setting = "Attiva trucchi di prova",
-    jrc_cheat_hint = "Ctrl sinistro + Maiusc sinistro + F8: 1000 frammenti, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# frammenti / $#2# in questa partita",

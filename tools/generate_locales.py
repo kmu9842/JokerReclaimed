@@ -52,8 +52,6 @@ translations = {
 ジョーカーを破壊します。売却金や売却効果はありません。
 キャンセル
 破る前に確認する
-テスト用チートを有効化
-左Ctrl＋左Shift＋F8：かけら1000個、$100
 かけら#1#個 / このランの所持金$#2#
 #1#個＋$#2#
 修復・#1#個＋$#2#
@@ -105,8 +103,6 @@ translations = {
 销毁小丑牌。不会获得卖出金钱或触发卖出效果。
 取消
 撕碎前确认
-启用测试作弊
-左Ctrl＋左Shift＋F8：1000碎片、$100
 碎片#1#个 / 本局$#2#
 #1#碎片＋$#2#
 修复 · #1#碎片＋$#2#
@@ -158,8 +154,6 @@ translations = {
 銷毀小丑牌。不會獲得賣出金錢或觸發賣出效果。
 取消
 撕碎前確認
-啟用測試作弊
-左Ctrl＋左Shift＋F8：1000碎片、$100
 碎片#1#個 / 本局$#2#
 #1#碎片＋$#2#
 修復 · #1#碎片＋$#2#
@@ -211,8 +205,6 @@ Diesen Joker zerreißen?
 Zerstört den Joker. Kein Verkaufserlös und keine Verkaufseffekte.
 Abbrechen
 Zerreißen vorher bestätigen
-Test-Cheats aktivieren
-Linke Strg + linke Umschalt + F8: 1000 Fragmente, $100
 #1# Fragmente / $#2# in diesem Run
 #1# Fragmente + $#2#
 Wiederherstellen · #1# Fragmente + $#2#
@@ -264,8 +256,6 @@ Déchirer ce Joker ?
 Détruit le Joker sans argent ni effets de vente.
 Annuler
 Confirmer avant de déchirer
-Activer les codes de test
-Ctrl gauche + Maj gauche + F8 : 1000 fragments, $100
 #1# fragments / $#2# dans cette partie
 #1# fragments + $#2#
 Restaurer · #1# fragments + $#2#
@@ -317,8 +307,6 @@ Romper comodín
 Destruye el comodín sin dinero ni efectos de venta.
 Cancelar
 Confirmar antes de romper
-Activar trucos de prueba
-Ctrl izq. + Mayús izq. + F8: 1000 fragmentos, $100
 #1# fragmentos / $#2# en esta partida
 #1# fragmentos + $#2#
 Restaurar · #1# fragmentos + $#2#
@@ -370,8 +358,6 @@ Rasgar este curinga?
 Destrói o curinga sem dinheiro ou efeitos de venda.
 Cancelar
 Confirmar antes de rasgar
-Ativar truques de teste
-Ctrl esquerdo + Shift esquerdo + F8: 1000 fragmentos, $100
 #1# fragmentos / $#2# nesta partida
 #1# fragmentos + $#2#
 Restaurar · #1# fragmentos + $#2#
@@ -423,8 +409,6 @@ Strappare questo Joker?
 Distrugge il Joker senza denaro né effetti di vendita.
 Annulla
 Conferma prima di strappare
-Attiva trucchi di prova
-Ctrl sinistro + Maiusc sinistro + F8: 1000 frammenti, $100
 #1# frammenti / $#2# in questa partita
 #1# frammenti + $#2#
 Ripristina · #1# frammenti + $#2#
@@ -476,8 +460,6 @@ Sobek Joker ini?
 Menghancurkan Joker tanpa uang atau efek penjualan.
 Batal
 Konfirmasi sebelum menyobek
-Aktifkan cheat pengujian
-Ctrl kiri + Shift kiri + F8: 1000 serpihan, $100
 #1# serpihan / $#2# dalam permainan ini
 #1# serpihan + $#2#
 Pulihkan · #1# serpihan + $#2#
@@ -529,8 +511,6 @@ Dapatkan #1# serpihan permanen.''',
 Уничтожает джокера без денег и эффектов продажи.
 Отмена
 Подтверждать разрыв джокера
-Включить тестовые читы
-Левые Ctrl + Shift + F8: 1000 обрывков, $100
 #1# обрывков / $#2# в этом забеге
 #1# обрывков + $#2#
 Восстановить · #1# обрывков + $#2#
@@ -582,8 +562,6 @@ Deze Joker verscheuren?
 Vernietigt de Joker zonder verkoopgeld of verkoopeffecten.
 Annuleren
 Bevestigen vóór het verscheuren
-Testcheats inschakelen
-Linker Ctrl + linker Shift + F8: 1000 snippers, $100
 #1# snippers / $#2# in deze run
 #1# snippers + $#2#
 Herstellen · #1# snippers + $#2#
@@ -635,8 +613,6 @@ Podrzeć tego Jokera?
 Niszczy Jokera bez pieniędzy i efektów sprzedaży.
 Anuluj
 Potwierdzaj przed podarciem
-Włącz kody testowe
-Lewy Ctrl + lewy Shift + F8: 1000 skrawków, $100
 #1# skrawków / $#2# w tej rozgrywce
 #1# skrawków + $#2#
 Odtwórz · #1# skrawków + $#2#
@@ -653,7 +629,7 @@ for language, text in translations.items():
         text = text.replace('\u00b7', '/').replace('\u2019', "'")
     values = text.splitlines()
     assert len(values) == len(keys), (language, len(values), len(keys))
-    sections = {'dictionary': dict(zip(keys[:46], values[:46])), 'v_dictionary': dict(zip(keys[46:], values[46:]))}
+    sections = {'dictionary': dict(zip(keys[:44], values[:44])), 'v_dictionary': dict(zip(keys[44:], values[44:]))}
     lines = ['return {misc = {']
     for section, entries in sections.items():
         lines.append(section + ' = {')

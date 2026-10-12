@@ -20,8 +20,7 @@ return {misc = {dictionary = {
     jrc_already_torn = 'Scraps already claimed', jrc_protected = 'This Joker is protected',
     jrc_tear = 'Tear Joker', jrc_tear_title = 'Tear this Joker?',
     jrc_tear_warning = 'Destroys the Joker. No sale money or sell effects.', jrc_cancel = 'Cancel',
-    jrc_confirm_setting = 'Confirm before tearing a Joker', jrc_cheat_setting = 'Enable testing cheats',
-    jrc_cheat_hint = 'Left Ctrl + Left Shift + F8: +1000 scraps, +$100',
+    jrc_confirm_setting = 'Confirm before tearing a Joker',
 }, v_dictionary = {
     jrc_balance = '#1# scraps   /   $#2# this run',
     jrc_price = '#1# scraps + $#2#', jrc_buy_price = 'Restore / #1# scraps + $#2#',

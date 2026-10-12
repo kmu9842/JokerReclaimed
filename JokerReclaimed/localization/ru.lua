@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Уничтожает джокера без денег и эффектов продажи.",
     jrc_cancel = "Отмена",
     jrc_confirm_setting = "Подтверждать разрыв джокера",
-    jrc_cheat_setting = "Включить тестовые читы",
-    jrc_cheat_hint = "Левые Ctrl + Shift + F8: 1000 обрывков, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# обрывков / $#2# в этом забеге",

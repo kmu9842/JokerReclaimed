@@ -24,7 +24,7 @@ python tools/build.py
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/install.ps1
 ```
 
-빌드는 `dist/JokerReclaimed-1.0.1.zip`과 SHA-256 체크섬을 만듭니다. 설치 스크립트는 기존 설치가 있으면 `.local/install-backups`에 백업하고 사용자 설정을 보존하며 설치 파일의 해시를 검증합니다.
+빌드는 `dist/JokerReclaimed-1.0.2.zip`과 SHA-256 체크섬을 만듭니다. 설치 스크립트는 기존 설치가 있으면 `.local/install-backups`에 백업하고 사용자 설정을 보존하며 설치 파일의 해시를 검증합니다.
 
 ## 이미지와 번역
 

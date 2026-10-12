@@ -1,4 +1,4 @@
--- All economy and test values live here. Restart Balatro after editing.
+-- All economy values and the shop shortcut live here. Restart Balatro after editing.
 return {
     rarities = {
         [1] = { scraps = 1,  price = 10 },  -- Common / 일반
@@ -16,6 +16,6 @@ return {
     -- Rental + perishable = $1; rental + eternal = $2.
     sticker_dollars = { rental = 1, perishable = 1, eternal = 2 },
     page_size = 8,
-    cheats = { scraps = 1000, dollars = 100, key = 'f8', shop_key = 'f7' },
+    shop_key = 'f7',
     wallet_directory = 'joker_reclaimed',
 }

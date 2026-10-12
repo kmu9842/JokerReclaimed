@@ -224,8 +224,6 @@ function J.reconcile()
                     G.jokers:emplace(card)
                     ease_dollars(-tx.dollars, true)
                 end
-            elseif tx.kind == 'cheat' and tx.dollars then
-                ease_dollars(tx.dollars, true)
             end
             G.GAME.jrc_applied[tx.id], changed = true, true
         end
@@ -246,25 +244,7 @@ function Game:start_run(...)
     return result
 end
 
-function J.cheat()
-    if not mod.config.enable_cheats or G.STAGE ~= G.STAGES.RUN or J.busy
-        or not J.ensure_run() then return end
-    local amount = J.balance.cheats
-    local tx = {id = 'cheat:' .. tostring(J.wallet.data.revision + 1), kind = 'cheat',
-        run = G.GAME.jrc_run_id, scraps = amount.scraps, dollars = amount.dollars}
-    if not J.wallet:transaction(tx, amount.scraps) then J.message('save_error'); return end
-    ease_dollars(amount.dollars, true)
-    G.GAME.jrc_applied[tx.id] = true
-    G.GAME.jrc_cheated = true
-    J.sync()
-    J.save()
-    play_sound('coin1')
-    if J.session and G.OVERLAY_MENU then J.refresh() end
-end
-
-SMODS.Keybind{key = 'test_funds', key_pressed = J.balance.cheats.key,
-    held_keys = {'lctrl', 'lshift'}, action = J.cheat}
-SMODS.Keybind{key = 'open_restore', key_pressed = J.balance.cheats.shop_key,
+SMODS.Keybind{key = 'open_restore', key_pressed = J.balance.shop_key,
     action = function() if J.in_shop() and not G.OVERLAY_MENU then G.FUNCS.jrc_open() end end}
 
 assert(SMODS.load_file('lib/ui.lua'))()
@@ -272,9 +252,5 @@ assert(SMODS.load_file('lib/ui.lua'))()
 mod.config_tab = function()
     return {n = G.UIT.ROOT, config = {align = 'cm', padding = 0.2, colour = G.C.BLACK, r = 0.1}, nodes = {
         create_toggle{label = J.text('confirm_setting'), ref_table = mod.config, ref_value = 'confirm_tear'},
-        create_toggle{label = J.text('cheat_setting'), ref_table = mod.config, ref_value = 'enable_cheats'},
-        {n = G.UIT.R, config = {align = 'cm'}, nodes = {
-            {n = G.UIT.T, config = {text = J.text('cheat_hint'), scale = 0.3, colour = G.C.GOLD}}
-        }},
     }}
 end

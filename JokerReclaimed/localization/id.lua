@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Menghancurkan Joker tanpa uang atau efek penjualan.",
     jrc_cancel = "Batal",
     jrc_confirm_setting = "Konfirmasi sebelum menyobek",
-    jrc_cheat_setting = "Aktifkan cheat pengujian",
-    jrc_cheat_hint = "Ctrl kiri + Shift kiri + F8: 1000 serpihan, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# serpihan / $#2# dalam permainan ini",

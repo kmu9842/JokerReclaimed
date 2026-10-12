@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Détruit le Joker sans argent ni effets de vente.",
     jrc_cancel = "Annuler",
     jrc_confirm_setting = "Confirmer avant de déchirer",
-    jrc_cheat_setting = "Activer les codes de test",
-    jrc_cheat_hint = "Ctrl gauche + Maj gauche + F8 : 1000 fragments, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# fragments / $#2# dans cette partie",

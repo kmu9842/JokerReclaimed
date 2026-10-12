@@ -51,11 +51,14 @@ function Game:update(dt)
             local joker = G.P_CENTERS.j_joker
             local allowed, reason = JRC.can_buy(joker, {edition = 'none'})
             check(not allowed and reason == 'need_scraps', 'empty wallet rejects purchase')
-            JRC.mod.config.enable_cheats = true
             starting_balance = JRC.wallet.data.scraps
-            JRC.cheat()
-            check(JRC.wallet.data.scraps == starting_balance + 1000, 'cheat scraps')
-            check(G.GAME.dollars >= 100, 'cheat dollars')
+            -- Isolated QA fixture only; this file is never shipped with the mod.
+            local fixture = {id = 'qa-funds', kind = 'qa_fixture', scraps = 1000}
+            check(JRC.wallet:transaction(fixture, 1000), 'fixture funds saved')
+            ease_dollars(100, true)
+            JRC.sync()
+            check(JRC.wallet.data.scraps == starting_balance + 1000, 'fixture scraps')
+            check(G.GAME.dollars >= 100, 'fixture dollars')
             G.P_CENTERS.j_caino.unlocked, G.P_CENTERS.j_caino.discovered = true, true
             local locked = G.P_CENTERS.j_blueprint
             locked.unlocked = false
@@ -72,7 +75,7 @@ function Game:update(dt)
             check(G.GAME.dollars == cash - base.dollars, 'base cash charged once')
             check(JRC.wallet.data.scraps == starting_balance + 1000 - 10, 'base scraps charged')
             torn_card = card
-            log('Base purchase, unlock filter, and testing cheat passed')
+            log('Base purchase and unlock filter passed using isolated fixture funds')
             stage, wait_until = 3, elapsed + 2
         elseif stage == 3 then
             if not ready() then wait_until = elapsed + 0.5; return end

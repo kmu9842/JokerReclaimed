@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Zerstört den Joker. Kein Verkaufserlös und keine Verkaufseffekte.",
     jrc_cancel = "Abbrechen",
     jrc_confirm_setting = "Zerreißen vorher bestätigen",
-    jrc_cheat_setting = "Test-Cheats aktivieren",
-    jrc_cheat_hint = "Linke Strg + linke Umschalt + F8: 1000 Fragmente, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# Fragmente / $#2# in diesem Run",

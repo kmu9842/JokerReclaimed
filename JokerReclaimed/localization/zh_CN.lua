@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "销毁小丑牌。不会获得卖出金钱或触发卖出效果。",
     jrc_cancel = "取消",
     jrc_confirm_setting = "撕碎前确认",
-    jrc_cheat_setting = "启用测试作弊",
-    jrc_cheat_hint = "左Ctrl＋左Shift＋F8：1000碎片、$100",
 },
 v_dictionary = {
     jrc_balance = "碎片#1#个 / 本局$#2#",

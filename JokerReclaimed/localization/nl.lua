@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "Vernietigt de Joker zonder verkoopgeld of verkoopeffecten.",
     jrc_cancel = "Annuleren",
     jrc_confirm_setting = "Bevestigen vóór het verscheuren",
-    jrc_cheat_setting = "Testcheats inschakelen",
-    jrc_cheat_hint = "Linker Ctrl + linker Shift + F8: 1000 snippers, $100",
 },
 v_dictionary = {
     jrc_balance = "#1# snippers / $#2# in deze run",

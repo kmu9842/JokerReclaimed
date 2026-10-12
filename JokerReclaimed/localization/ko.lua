@@ -20,8 +20,7 @@ return {misc = {dictionary = {
     jrc_already_torn = '이미 조각을 받은 조커입니다', jrc_protected = '이 조커는 파괴할 수 없습니다',
     jrc_tear = '조커 찢기', jrc_tear_title = '이 조커를 찢을까요?',
     jrc_tear_warning = '조커가 사라집니다. 판매대금과 판매 효과는 없습니다.', jrc_cancel = '취소',
-    jrc_confirm_setting = '조커를 찢기 전에 확인', jrc_cheat_setting = '테스트 치트 활성화',
-    jrc_cheat_hint = '왼쪽 Ctrl + 왼쪽 Shift + F8: 조각 1000개, $100',
+    jrc_confirm_setting = '조커를 찢기 전에 확인',
 }, v_dictionary = {
     jrc_balance = '보유 조각 #1#개   /   이번 런 $#2#',
     jrc_price = '조각 #1#개 + $#2#', jrc_buy_price = '복원 · 조각 #1#개 + $#2#',

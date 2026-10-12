@@ -44,8 +44,6 @@ dictionary = {
     jrc_tear_warning = "ジョーカーを破壊します。売却金や売却効果はありません。",
     jrc_cancel = "キャンセル",
     jrc_confirm_setting = "破る前に確認する",
-    jrc_cheat_setting = "テスト用チートを有効化",
-    jrc_cheat_hint = "左Ctrl＋左Shift＋F8：かけら1000個、$100",
 },
 v_dictionary = {
     jrc_balance = "かけら#1#個 / このランの所持金$#2#",
