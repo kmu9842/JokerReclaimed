@@ -1,0 +1,14 @@
+{
+  "id": "JokerReclaimed",
+  "name": "Joker Reclaimed",
+  "display_name": "Joker Reclaimed",
+  "author": ["MIN"],
+  "description": "Tear Jokers into persistent scraps and restore any unlocked Joker with selected stickers and editions.",
+  "prefix": "jrc",
+  "main_file": "main.lua",
+  "version": "1.0.1",
+  "priority": 100,
+  "dependencies": ["Steamodded (>=1.0.0~BETA-1221a)"],
+  "badge_colour": "397F73",
+  "badge_text_colour": "F4E9CD"
+}

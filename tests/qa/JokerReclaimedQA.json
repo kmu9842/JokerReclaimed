@@ -1,0 +1,1 @@
+{"id":"JokerReclaimedQA","name":"JRC isolated runtime tests","author":["MIN"],"description":"Development-only integration runner.","prefix":"jrcqa","main_file":"main.lua","version":"1.0.0","priority":10000,"dependencies":["JokerReclaimed"]}

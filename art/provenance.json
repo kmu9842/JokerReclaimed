@@ -1,0 +1,9 @@
+{
+  "provider": "Forge MCP",
+  "model": "GPT Image 2.5 Sunburst",
+  "model_id": "gpt_image_25_sunburst",
+  "visibility": "private",
+  "source": "source/forge-gpt-image-2-5-sunburst-1.png",
+  "prompt": "Create a production game inventory icon for a Balatro mod: a torn Joker playing card split diagonally into three chunky paper scraps, ivory card stock with a tiny two-tone red and green jester cap motif, a single small gold diamond glint between the scraps. Match Balatro's native 2D pixel art: a 32 by 32 logical pixel grid enlarged with nearest-neighbor to 1024 by 1024, all edges on that grid, crisp blocky contours and deliberately minimal detail that reads at 32 pixels. Use precisely this restrained Balatro UI palette: background solid #374244, deep outline #1D292C, paper #F1E9D2 with #BFC7D5 shaded edges, coral red #FE5F55, green #4BC292, and muted gold #EAC058. Center the three clearly separated scraps inside the middle 24 by 24 logical pixels with four logical pixels of plain background on each edge. Draw one flat standalone sprite only, straight-on view, even lighting, no perspective, no gradients, no bloom, no photorealism, no antialiasing, no typography, no logo, no outer frame, no sprite sheet grid. Preserve the specified exact background color across all empty areas. The result must feel like a small currency symbol that belongs in Balatro's original collection and shop screens.",
+  "conversion": "tools/prepare_assets.py: deterministic 32px nearest-neighbor downsample, native Balatro palette quantization, 2x nearest-neighbor atlas export. No other image generation provider used for shipped assets."
+}
